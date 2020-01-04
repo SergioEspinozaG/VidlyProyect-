@@ -11,7 +11,11 @@ namespace Vidly.Models
 
         public string Name { get; set; }
 
+        public bool isSubscribedToNewLetter { get; set; }
 
+        public MembershipType MembershipType { get; set; }
+
+        public byte MembershipTypeId { get; set; }
 
     }
 }
