@@ -1,48 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using Vidly.DataAccess;
 using Vidly.Models;
-using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
-        private readonly Data data;
-
-        private readonly RandomMovieViewModel vm;
+        private readonly MyDBContext _context;
 
         public MoviesController()
         {
-            data = new Data();
-            vm = new RandomMovieViewModel();
+           _context = new MyDBContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
         }
 
         // GET: Movies
         public ActionResult Movies()
         {
+            var movies = _context.Movies.ToList();
 
-            vm.Customers = data.GetCustomers();
-            vm.Movies = data.GetMovies();
-
-            return View(vm);
+            return View(movies);
         }
 
 
-        public ActionResult MoviesDetail(int Id)
+        public ViewResult MoviesDetail(int Id)
         {
-            vm.Movies = data.GetMovies().Where(m => m.Id == Id).ToList();
+            var moviesDetailt = _context.Movies.SingleOrDefault(movies => movies.Id == Id);
 
-            return Content("Id = " + Id);
+            return View(moviesDetailt);
         }
 
-        public ActionResult Edit(int Id)
-        {
-            return View(vm);
-        }
 
         //movies
         public ActionResult Index(int? pageIndex, string sortBy)
@@ -65,9 +57,5 @@ namespace Vidly.Controllers
             return Content(year + "/" + month);
         }
 
-        public ActionResult Customers()
-        {
-            return View();
-        }
     }
 }

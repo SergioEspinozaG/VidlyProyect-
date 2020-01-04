@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.DataAccess;
 using Vidly.Models;
-using Vidly.ViewModels;
+using System.Data.Entity;
+
 
 namespace Vidly.Controllers
 {
@@ -24,10 +25,10 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
 
-        public ViewResult ReadCustomers()
+        public ActionResult ReadCustomers()
         {
 
-            var customers = _context.Customers.ToList();
+            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
 
             return View(customers);
         }
@@ -35,7 +36,7 @@ namespace Vidly.Controllers
         public ActionResult DetailCustomers(int id)
         {
 
-            var customers = _context.Customers.SingleOrDefault(c => c.Id == id);
+            var customers = _context.Customers.Include(d => d.MembershipType).SingleOrDefault(c => c.Id == id);
 
             if (customers == null)
             {

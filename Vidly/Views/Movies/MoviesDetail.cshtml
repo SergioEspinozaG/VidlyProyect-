@@ -1,4 +1,4 @@
-﻿@model Vidly.ViewModels.RandomMovieViewModel
+﻿@model Vidly.Models.Movie
 
 @{
     Layout = null;
@@ -6,18 +6,12 @@
 
 @*<h2>@Model.Name</h2>*@
 
-
-@if (Model.Customers.Count == 0)
-{
-    <p>No one has rented this movie before </p>
-}
-else
-{
     <p> This movie has been rented for : </p>
-    <ul>
-        @foreach (var movies in Model.Movies)
+
+    <p> @Model.Name</p>
+    @*@foreach (var movies in Model.)
         {
             <li>@movies.Name</li>
-        }
-    </ul>
-}
+        }*@
+
+
