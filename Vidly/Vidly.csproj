@@ -150,6 +150,10 @@
     <Compile Include="Migrations\202001040614573_PopulateMembershipTypes.designer.cs">
       <DependentUpon>202001040614573_PopulateMembershipTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001040642107_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\202001040642107_ApplyAnnotationsToCustomerName.designer.cs">
+      <DependentUpon>202001040642107_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -195,9 +199,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Movies\Random.cshtml" />
+    <Content Include="Views\Movies\Movies.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Customers\ReadCustomers.cshtml" />
+    <Content Include="Views\Customers\DetailCustomers.cshtml" />
+    <Content Include="Views\Movies\MoviesDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001040614573_PopulateMembershipTypes.resx">
       <DependentUpon>202001040614573_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001040642107_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>202001040642107_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

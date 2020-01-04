@@ -13,25 +13,35 @@ namespace Vidly.Controllers
     {
         private readonly Data data;
 
+        private readonly RandomMovieViewModel vm;
+
         public MoviesController()
         {
-            data = new Data();   
+            data = new Data();
+            vm = new RandomMovieViewModel();
         }
 
         // GET: Movies
-        public ActionResult Random()
+        public ActionResult Movies()
         {
 
-            var vm = new RandomMovieViewModel();
             vm.Customers = data.GetCustomers();
             vm.Movies = data.GetMovies();
 
             return View(vm);
         }
 
+
+        public ActionResult MoviesDetail(int Id)
+        {
+            vm.Movies = data.GetMovies().Where(m => m.Id == Id).ToList();
+
+            return Content("Id = " + Id);
+        }
+
         public ActionResult Edit(int Id)
         {
-            return Content("Id = " + Id);
+            return View(vm);
         }
 
         //movies

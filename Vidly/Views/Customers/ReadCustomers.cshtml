@@ -1,14 +1,22 @@
-﻿@model Vidly.ViewModels.RandomMovieViewModel
+﻿@model IEnumerable<Vidly.Models.Customer>
 
 @{
     ViewBag.Title = "ReadCustomers";
 }
 
-<h1>Vidly Clients list:</h1>
-<ul>
-    @foreach (var item in Model.Customers)
-    {
-        <li>@item.Id - @item.Name</li>
-    }
-</ul>
-
+<h2>Customers</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Customer</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(customer.Name, "DetailCustomers", "Customers", new { id = customer.Id }, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
