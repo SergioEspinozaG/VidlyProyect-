@@ -4,14 +4,17 @@
     Layout = null;
 }
 
-@*<h2>@Model.Name</h2>*@
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-    <p> This movie has been rented for : </p>
+<h2>@Model.Name</h2>
 
-    <p> @Model.Name</p>
-    @*@foreach (var movies in Model.)
-        {
-            <li>@movies.Name</li>
-        }*@
-
-
+<ul>
+    <li>Movie Id: @Model.Id</li>
+    <li>Genre: @Model.MovieData.Genre</li>
+    <li>Date Added: @Model.MovieData.DateAdded.Date</li>
+    <li>Released Date: @Model.MovieData.ReleaseDate.Date</li>
+    <li>Number in Stock: @Model.MovieData.NumberInStock</li>
+</ul>

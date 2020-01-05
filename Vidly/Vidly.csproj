@@ -162,10 +162,27 @@
     <Compile Include="Migrations\202001042056059_AddMembershipsNames.designer.cs">
       <DependentUpon>202001042056059_AddMembershipsNames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001042230237_AddBirthdateProperty.cs" />
+    <Compile Include="Migrations\202001042230237_AddBirthdateProperty.designer.cs">
+      <DependentUpon>202001042230237_AddBirthdateProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001042232157_AddBirthdateProperty2.cs" />
+    <Compile Include="Migrations\202001042232157_AddBirthdateProperty2.designer.cs">
+      <DependentUpon>202001042232157_AddBirthdateProperty2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001042316522_AddBirthdateProperty1.cs" />
+    <Compile Include="Migrations\202001042316522_AddBirthdateProperty1.designer.cs">
+      <DependentUpon>202001042316522_AddBirthdateProperty1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001050002507_AddMovieData.cs" />
+    <Compile Include="Migrations\202001050002507_AddMovieData.designer.cs">
+      <DependentUpon>202001050002507_AddMovieData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\MovieData.cs" />
     <Compile Include="Models\MyDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -250,6 +267,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001042056059_AddMembershipsNames.resx">
       <DependentUpon>202001042056059_AddMembershipsNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001042230237_AddBirthdateProperty.resx">
+      <DependentUpon>202001042230237_AddBirthdateProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001042232157_AddBirthdateProperty2.resx">
+      <DependentUpon>202001042232157_AddBirthdateProperty2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001042316522_AddBirthdateProperty1.resx">
+      <DependentUpon>202001042316522_AddBirthdateProperty1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001050002507_AddMovieData.resx">
+      <DependentUpon>202001050002507_AddMovieData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -3,7 +3,7 @@
 @{
     Layout = null;
 }
-
+<th>Birthdate</th>
 
 @{
     ViewBag.Title = Model.Name;
@@ -14,9 +14,13 @@
     <thead>
     <tr>
         <th>Id</th>
-        <td>Client Name</td>
-        <td>Membership</td>
-        <td>Discount Rate</td>
+        <th>Client Name</th>
+        @if (Model.Birthdate.HasValue)
+        {
+            <th>Birthdate</th>
+        }
+        <th>Membership</th>
+        <th>Discount Rate</th>
     </tr>
     </thead>
     <tbody>
@@ -24,6 +28,10 @@
         <tr>
             <td>@Model.Id</td>
             <td>@Model.Name</td>
+                @if (Model.Birthdate.HasValue)
+                {
+            <td>@Model.Birthdate.Value.ToShortDateString()</td>
+                }
             <td>@Model.MembershipType.Name</td>
             <td>@Model.MembershipType.DiscountRate%</td>
         </tr>

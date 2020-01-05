@@ -11,5 +11,8 @@ namespace Vidly.Models
 
         public string Name { get; set; }
 
+        public MovieData MovieData { get; set; }
+
+        public byte MovieDataId { get; set; }
     }
 }

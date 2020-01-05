@@ -1,4 +1,4 @@
-﻿
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
@@ -22,7 +22,7 @@ namespace Vidly.Controllers
         // GET: Movies
         public ActionResult Movies()
         {
-            var movies = _context.Movies.ToList();
+            var movies = _context.Movies.Include(m => m.MovieData).ToList();
 
             return View(movies);
         }
@@ -30,7 +30,7 @@ namespace Vidly.Controllers
 
         public ViewResult MoviesDetail(int Id)
         {
-            var moviesDetailt = _context.Movies.SingleOrDefault(movies => movies.Id == Id);
+            var moviesDetailt = _context.Movies.Include(m=>m.MovieData).SingleOrDefault(movies => movies.Id == Id);
 
             return View(moviesDetailt);
         }
