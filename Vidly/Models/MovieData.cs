@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Vidly.Models
 {
@@ -12,7 +13,7 @@ namespace Vidly.Models
         public byte Id { get; set; }
 
         [Required]
-        public string Genre { get; set; }
+        public MoviesGenres MoviesGenres { get; set; }
 
         [Required]
         public DateTime ReleaseDate { get; set; }
@@ -21,6 +22,10 @@ namespace Vidly.Models
         public DateTime DateAdded { get; } = DateTime.Now;
 
         [Required]
-        public int NumberInStock { get; set; }  
+        public int NumberInStock { get; set; }
+
+        public int AgeRestriction { get; set; }
+
+        public byte GenreId { get; set; }
     }
 }
