@@ -13,9 +13,6 @@ namespace Vidly.Models
         public byte Id { get; set; }
 
         [Required]
-        public MoviesGenres MoviesGenres { get; set; }
-
-        [Required]
         public DateTime ReleaseDate { get; set; }
 
         [Required]
@@ -25,6 +22,9 @@ namespace Vidly.Models
         public int NumberInStock { get; set; }
 
         public int AgeRestriction { get; set; }
+
+        [Required]
+        public MoviesGenres MoviesGenres { get; set; }
 
         public byte GenreId { get; set; }
     }

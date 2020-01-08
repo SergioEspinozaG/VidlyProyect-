@@ -29,30 +29,30 @@ namespace Vidly.Controllers
         public ActionResult ReadCustomers()
         {
 
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+            //var customers = _context.Customers.Include(c => c.MembershipType).ToList();
 
-            return View(customers);
+            return View(/*customers*/);
         }
 
         public ActionResult DetailCustomers(int id)
         {
 
-            var customers = _context.Customers.Include(d => d.MembershipType).SingleOrDefault(c => c.Id == id);
+            //var customers = _context.Customers.Include(d => d.MembershipType).SingleOrDefault(c => c.Id == id);
 
-            if (customers == null)
-            {
-                return HttpNotFound();
-            }
+            //if (customers == null)
+            //{
+            //    return HttpNotFound();
+            //}
 
-            return View(customers);
+            return View(/*customers*/);
         }
 
         public ActionResult New()
         {
-            var membershipTypes = _context.MembershipTypes.ToList();
+            //var membershipTypes = _context.MembershipTypes.ToList();
             var vm = new CustomerFormViewModel
             {
-                MembershipTypes = membershipTypes,
+                //MembershipTypes = membershipTypes,
             };
             return View("CustomerFrom", vm);
         }
@@ -62,15 +62,15 @@ namespace Vidly.Controllers
         {
             if (customer.Id == 0)
             {
-                _context.Customers.Add(customer);
+             //   _context.Customers.Add(customer);
             }
             else
             {
-                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
-                customerInDb.Name = customer.Name;
-                customerInDb.Birthdate = customer.Birthdate;
-                customerInDb.MembershipTypeId = customer.MembershipTypeId;
-                customerInDb.IsSubscribedToNewLetter = customer.IsSubscribedToNewLetter;
+                //var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+                //customerInDb.Name = customer.Name;
+                //customerInDb.Birthdate = customer.Birthdate;
+                //customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                //customerInDb.IsSubscribedToNewLetter = customer.IsSubscribedToNewLetter;
             }
             _context.SaveChanges();
 
@@ -80,17 +80,17 @@ namespace Vidly.Controllers
 
         public ActionResult Edit(int id)
         {
-            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            //var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
 
-            if (customer == null)
-            {
-                return HttpNotFound();
-            }
+            //if (customer == null)
+            //{
+            //    return HttpNotFound();
+            //}
 
             var vm = new CustomerFormViewModel()
             {
-                Customer = customer,
-                MembershipTypes = _context.MembershipTypes.ToList(),
+                //Customer = customer,
+               // MembershipTypes = _context.MembershipTypes.ToList(),
             };
 
             return View("CustomerFrom", vm);

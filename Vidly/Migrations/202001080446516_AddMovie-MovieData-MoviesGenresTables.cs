@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class MasterUpdate : DbMigration
+    public partial class AddMovieMovieDataMoviesGenresTables : DbMigration
     {
         public override void Up()
         {
@@ -32,20 +32,27 @@
                     })
                 .PrimaryKey(t => t.Id);
             
-            AddColumn("dbo.Movies", "MovieDataId", c => c.Byte(nullable: false));
-            AlterColumn("dbo.Movies", "Name", c => c.String(nullable: false));
-            CreateIndex("dbo.Movies", "MovieDataId");
-            AddForeignKey("dbo.Movies", "MovieDataId", "dbo.MovieDatas", "Id", cascadeDelete: true);
+            CreateTable(
+                "dbo.Movies",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false),
+                        MovieDataId = c.Byte(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.MovieDatas", t => t.MovieDataId, cascadeDelete: true)
+                .Index(t => t.MovieDataId);
+            
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.Movies", "MovieDataId", "dbo.MovieDatas");
             DropForeignKey("dbo.MovieDatas", "MoviesGenres_Id", "dbo.MoviesGenres");
-            DropIndex("dbo.MovieDatas", new[] { "MoviesGenres_Id" });
             DropIndex("dbo.Movies", new[] { "MovieDataId" });
-            AlterColumn("dbo.Movies", "Name", c => c.String());
-            DropColumn("dbo.Movies", "MovieDataId");
+            DropIndex("dbo.MovieDatas", new[] { "MoviesGenres_Id" });
+            DropTable("dbo.Movies");
             DropTable("dbo.MoviesGenres");
             DropTable("dbo.MovieDatas");
         }

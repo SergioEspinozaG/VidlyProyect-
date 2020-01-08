@@ -22,17 +22,17 @@ namespace Vidly.Controllers
         // GET: Movies
         public ActionResult Movies()
         {
-            var movies = _context.Movies.Include(m => m.MovieData).ToList();
+           // var movies = _context.Movies.Include(m => m.MovieData).ToList();
 
-            return View(movies);
+            return View(/*movies*/);
         }
 
 
         public ViewResult MoviesDetail(int Id)
         {
-            var moviesDetailt = _context.Movies.Include(m=>m.MovieData).SingleOrDefault(movies => movies.Id == Id);
+            //var moviesDetailt = _context.Movies.Include(m=>m.MovieData).SingleOrDefault(movies => movies.Id == Id);
 
-            return View(moviesDetailt);
+            return View(/*moviesDetailt*/);
         }
 
 

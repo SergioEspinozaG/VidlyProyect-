@@ -5,7 +5,6 @@ namespace Vidly.Models
 {
     public class MoviesGenres
     {
-        [Required]
         public byte Id { get; set; }
 
         public string GenreName { get; set; }

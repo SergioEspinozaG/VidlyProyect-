@@ -134,37 +134,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001012355062_InitialModel.cs" />
-    <Compile Include="Migrations\202001012355062_InitialModel.designer.cs">
-      <DependentUpon>202001012355062_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\202001080435550_AddCustomerAndMembershipTypes.cs" />
+    <Compile Include="Migrations\202001080435550_AddCustomerAndMembershipTypes.designer.cs">
+      <DependentUpon>202001080435550_AddCustomerAndMembershipTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001040607323_AddIsSubscribedToCustomer.cs" />
-    <Compile Include="Migrations\202001040607323_AddIsSubscribedToCustomer.designer.cs">
-      <DependentUpon>202001040607323_AddIsSubscribedToCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001040612452_AddMembershipType.cs" />
-    <Compile Include="Migrations\202001040612452_AddMembershipType.designer.cs">
-      <DependentUpon>202001040612452_AddMembershipType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001040614573_PopulateMembershipTypes.cs" />
-    <Compile Include="Migrations\202001040614573_PopulateMembershipTypes.designer.cs">
-      <DependentUpon>202001040614573_PopulateMembershipTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001040642107_ApplyAnnotationsToCustomerName.cs" />
-    <Compile Include="Migrations\202001040642107_ApplyAnnotationsToCustomerName.designer.cs">
-      <DependentUpon>202001040642107_ApplyAnnotationsToCustomerName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001042053061_UpdateMemebershipTable.cs" />
-    <Compile Include="Migrations\202001042053061_UpdateMemebershipTable.designer.cs">
-      <DependentUpon>202001042053061_UpdateMemebershipTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001042056059_AddMembershipsNames.cs" />
-    <Compile Include="Migrations\202001042056059_AddMembershipsNames.designer.cs">
-      <DependentUpon>202001042056059_AddMembershipsNames.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001070542108_MasterUpdate.cs" />
-    <Compile Include="Migrations\202001070542108_MasterUpdate.designer.cs">
-      <DependentUpon>202001070542108_MasterUpdate.cs</DependentUpon>
+    <Compile Include="Migrations\202001080446516_AddMovie-MovieData-MoviesGenresTables.cs" />
+    <Compile Include="Migrations\202001080446516_AddMovie-MovieData-MoviesGenresTables.designer.cs">
+      <DependentUpon>202001080446516_AddMovie-MovieData-MoviesGenresTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -237,29 +213,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001012355062_InitialModel.resx">
-      <DependentUpon>202001012355062_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001080435550_AddCustomerAndMembershipTypes.resx">
+      <DependentUpon>202001080435550_AddCustomerAndMembershipTypes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001040607323_AddIsSubscribedToCustomer.resx">
-      <DependentUpon>202001040607323_AddIsSubscribedToCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001040612452_AddMembershipType.resx">
-      <DependentUpon>202001040612452_AddMembershipType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001040614573_PopulateMembershipTypes.resx">
-      <DependentUpon>202001040614573_PopulateMembershipTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001040642107_ApplyAnnotationsToCustomerName.resx">
-      <DependentUpon>202001040642107_ApplyAnnotationsToCustomerName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001042053061_UpdateMemebershipTable.resx">
-      <DependentUpon>202001042053061_UpdateMemebershipTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001042056059_AddMembershipsNames.resx">
-      <DependentUpon>202001042056059_AddMembershipsNames.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001070542108_MasterUpdate.resx">
-      <DependentUpon>202001070542108_MasterUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001080446516_AddMovie-MovieData-MoviesGenresTables.resx">
+      <DependentUpon>202001080446516_AddMovie-MovieData-MoviesGenresTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
