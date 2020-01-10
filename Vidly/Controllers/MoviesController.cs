@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
+using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
@@ -30,11 +31,66 @@ namespace Vidly.Controllers
 
         public ViewResult MoviesDetail(int Id)
         {
-            var moviesDetailt = _context.Movies.Include(m=>m.MovieData.MoviesGenres).SingleOrDefault(movies => movies.Id == Id);
+            var moviesDetailt = _context.Movies.Include(m => m.MovieData.MoviesGenres).SingleOrDefault(movies => movies.Id == Id);
 
             return View(moviesDetailt);
         }
 
+        public ActionResult NewMovie()
+        {
+            var movieData = _context.MoviesGenres.ToList();
+
+            var newMovie = new MoviesFormViewModel()
+            {
+                MoviesGenrese    = movieData,
+            };
+
+            return View("MovieForm", newMovie);
+        }
+
+        [HttpPost]
+        public ActionResult Save(Movie movie)
+        {
+            if (movie.Id == 0)
+            {
+                _context.Movies.Add(movie);
+            }
+            else
+            {
+                var movieInDb = _context.Movies.Include(m => m.MovieData.MoviesGenres).Single(c => c.Id == movie.Id);
+                var moviesDataInDb = _context.MovieData.Single(mdb => mdb.Id == movie.MovieDataId);
+                movieInDb.Name = movie.Name;
+                movieInDb.MovieDataId = movie.MovieDataId;
+
+                moviesDataInDb.AgeRestriction = movie.MovieData.NumberInStock;
+                moviesDataInDb.NumberInStock = movie.MovieData.NumberInStock;
+
+                moviesDataInDb.MoviesGenres.Id = movie.MovieData.MoviesGenres.Id;
+                moviesDataInDb.AgeRestriction = movie.MovieData.AgeRestriction;
+            }
+
+            _context.SaveChanges();
+
+            return RedirectToAction("MoviesDetail", "Movies");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var movieEdit = _context.Movies.Include(m => m.MovieData.MoviesGenres).Single(m => m.Id == id);
+
+            if (movieEdit == null)
+            {
+                return HttpNotFound();
+            }
+
+            var vm = new MoviesFormViewModel()
+            {
+                Movie = movieEdit,
+                MoviesGenrese = _context.MoviesGenres.ToList(),
+            };
+
+            return View("MovieForm", vm);
+        }
 
         //movies
         public ActionResult Index(int? pageIndex, string sortBy)

@@ -12,6 +12,7 @@ namespace Vidly.Models
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = "Movie Name")]
         public string Name { get; set; }
 
         public MovieData MovieData { get; set; }
