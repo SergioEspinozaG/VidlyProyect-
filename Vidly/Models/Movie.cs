@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -9,14 +10,16 @@ namespace Vidly.Models
     public class Movie
     {
         [Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
         [Display(Name = "Movie Name")]
         public string Name { get; set; }
 
-        public MovieData MovieData { get; set; }
-
         public byte MovieDataId { get; set; }
+
+        [ForeignKey("MovieDataId")]
+        public MovieData MovieData { get; set; }
     }
 }

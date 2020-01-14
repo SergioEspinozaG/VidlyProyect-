@@ -60,9 +60,9 @@ namespace Vidly.Controllers
                 var movieInDb = _context.Movies.Include(m => m.MovieData.MoviesGenres).Single(c => c.Id == movie.Id);
                 
                 movieInDb.Name = movie.Name;
-                movieInDb.MovieData.AgeRestriction = movie.MovieData.NumberInStock;
+                movieInDb.MovieData.AgeRestriction = movie.MovieData.AgeRestriction;
                 movieInDb.MovieData.NumberInStock = movie.MovieData.NumberInStock;
-                movieInDb.MovieData.MoviesGenres_Id = movie.MovieData.MoviesGenres.Id;
+                movieInDb.MovieData.GenreId = movie.MovieData.GenreId;
                 movieInDb.MovieData.AgeRestriction = movie.MovieData.AgeRestriction;
                 movieInDb.MovieData.ReleaseDate = movie.MovieData.ReleaseDate;
 
@@ -70,7 +70,7 @@ namespace Vidly.Controllers
 
             _context.SaveChanges();
 
-            return RedirectToAction("MoviesDetail", "Movies");
+            return RedirectToAction("Movies", "Movies");
         }
 
         public ActionResult Edit(int id)

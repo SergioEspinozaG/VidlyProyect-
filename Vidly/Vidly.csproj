@@ -142,6 +142,38 @@
     <Compile Include="Migrations\202001080446516_AddMovie-MovieData-MoviesGenresTables.designer.cs">
       <DependentUpon>202001080446516_AddMovie-MovieData-MoviesGenresTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001122306316_UpdateForeignKeyMovieData.cs" />
+    <Compile Include="Migrations\202001122306316_UpdateForeignKeyMovieData.designer.cs">
+      <DependentUpon>202001122306316_UpdateForeignKeyMovieData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001130132057_UpdateForeignKeyMovie.cs" />
+    <Compile Include="Migrations\202001130132057_UpdateForeignKeyMovie.designer.cs">
+      <DependentUpon>202001130132057_UpdateForeignKeyMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001130133143_UpdateForeignKeyMovie2.cs" />
+    <Compile Include="Migrations\202001130133143_UpdateForeignKeyMovie2.designer.cs">
+      <DependentUpon>202001130133143_UpdateForeignKeyMovie2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001130457017_UpdateRequired.cs" />
+    <Compile Include="Migrations\202001130457017_UpdateRequired.designer.cs">
+      <DependentUpon>202001130457017_UpdateRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001130535468_UpdateRequired38.cs" />
+    <Compile Include="Migrations\202001130535468_UpdateRequired38.designer.cs">
+      <DependentUpon>202001130535468_UpdateRequired38.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001140307475_UpdateDB.cs" />
+    <Compile Include="Migrations\202001140307475_UpdateDB.designer.cs">
+      <DependentUpon>202001140307475_UpdateDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001140323195_UpdateDB1.cs" />
+    <Compile Include="Migrations\202001140323195_UpdateDB1.designer.cs">
+      <DependentUpon>202001140323195_UpdateDB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001140507572_IdCreatedDB.cs" />
+    <Compile Include="Migrations\202001140507572_IdCreatedDB.designer.cs">
+      <DependentUpon>202001140507572_IdCreatedDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -220,6 +252,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001080446516_AddMovie-MovieData-MoviesGenresTables.resx">
       <DependentUpon>202001080446516_AddMovie-MovieData-MoviesGenresTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001122306316_UpdateForeignKeyMovieData.resx">
+      <DependentUpon>202001122306316_UpdateForeignKeyMovieData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001130132057_UpdateForeignKeyMovie.resx">
+      <DependentUpon>202001130132057_UpdateForeignKeyMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001130133143_UpdateForeignKeyMovie2.resx">
+      <DependentUpon>202001130133143_UpdateForeignKeyMovie2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001130457017_UpdateRequired.resx">
+      <DependentUpon>202001130457017_UpdateRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001130535468_UpdateRequired38.resx">
+      <DependentUpon>202001130535468_UpdateRequired38.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001140307475_UpdateDB.resx">
+      <DependentUpon>202001140307475_UpdateDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001140323195_UpdateDB1.resx">
+      <DependentUpon>202001140323195_UpdateDB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001140507572_IdCreatedDB.resx">
+      <DependentUpon>202001140507572_IdCreatedDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

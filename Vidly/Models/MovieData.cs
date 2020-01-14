@@ -10,6 +10,7 @@ namespace Vidly.Models
     public class MovieData
     {
         [Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public byte Id { get; set; }
 
         [Required]
@@ -26,10 +27,9 @@ namespace Vidly.Models
         [Display(Name = "Age Restriction")]
         public int AgeRestriction { get; set; }
 
-        public byte MoviesGenres_Id { get; set; }
-        [Required]
-        public MoviesGenres MoviesGenres { get; set; }
-
         public byte GenreId { get; set; }
+
+        [ForeignKey("GenreId")]
+        public MoviesGenres MoviesGenres { get; set; }
     }
 }
