@@ -13,7 +13,7 @@ namespace Vidly.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Please enter a movie's name.")]
         [Display(Name = "Movie Name")]
         public string Name { get; set; }
 

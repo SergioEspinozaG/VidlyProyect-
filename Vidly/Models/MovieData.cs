@@ -27,6 +27,7 @@ namespace Vidly.Models
         [Display(Name = "Age Restriction")]
         public int AgeRestriction { get; set; }
 
+        [Display(Name = "Genre")]
         public byte GenreId { get; set; }
 
         [ForeignKey("GenreId")]

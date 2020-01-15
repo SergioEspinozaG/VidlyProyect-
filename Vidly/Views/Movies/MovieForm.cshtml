@@ -12,6 +12,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.Name)
         @Html.TextBoxFor(m => m.Movie.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Movie.Name)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.MovieData.AgeRestriction)
@@ -20,10 +21,12 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.MovieData.NumberInStock)
         @Html.TextBoxFor(m => m.Movie.MovieData.NumberInStock, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Movie.MovieData.NumberInStock)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.MovieData.GenreId)
         @Html.DropDownListFor(m => m.Movie.MovieData.GenreId, new SelectList(Model.MoviesGenrese, "Id", "GenreName"), "Select Genre Type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Movie.MovieData.GenreId)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.MovieData.ReleaseDate)
